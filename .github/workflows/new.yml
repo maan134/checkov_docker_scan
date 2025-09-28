@@ -18,7 +18,7 @@ jobs:
         with:
           framework: dockerfile
           output_format: sarif        # Specify SARIF format
-          continue-on-error: true
+          soft_fail: true
       - name: Upload SARIF as Artifact
         uses: actions/upload-artifact@v4
         with:
