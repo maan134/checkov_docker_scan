@@ -15,5 +15,10 @@ jobs:
         uses: bridgecrewio/checkov-action@master
         with:
           directory: .
-          framework: DockerFile 
+          framework: DockerFile
+      - name: Upload SARIF as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkov-report
+          path: results.sarif
           
