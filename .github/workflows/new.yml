@@ -17,6 +17,8 @@ jobs:
         uses: bridgecrewio/checkov-action@master
         with:
           framework: dockerfile
+          output_format: sarif        # Specify SARIF format
+          output_file: results.sarif # Specify output filename
       - name: Upload SARIF as Artifact
         uses: actions/upload-artifact@v4
         with:
