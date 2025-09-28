@@ -18,16 +18,16 @@ jobs:
 
       - name: Scan docker file
         run: |
-          checkov -f Dockerfile --output sarif
+          checkov -f Dockerfile -verbose --output sarif
 
-      - name: Upload SARIF artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v4
         with:
-          name: checkov-report
-          path: checkov-report.sarif
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
 
       - name: Upload SARIF as Artifact
         uses: actions/upload-artifact@v4
         with:
           name: checkov-report
-          path: checkov-report.sarif
+          path: results.sarif
