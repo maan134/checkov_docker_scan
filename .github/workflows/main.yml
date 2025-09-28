@@ -15,9 +15,6 @@ jobs:
       - name: Install Checkov (v2.1.97)
         run: pip install checkov==2.1.97
 
-      - name: Build Docker Image
-        run: docker build -t myimage:latest .
-
       - name: Scan docker file
         run: |
           checkov -f Dockerfile --all-checks --output sarif --output-file-path checkov-report.sarif
