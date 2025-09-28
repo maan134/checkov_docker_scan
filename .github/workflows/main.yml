@@ -17,7 +17,7 @@ jobs:
 
       - name: Scan docker file
         run: |
-          checkov -f Dockerfile --output sarif --output-file-path checkov-report.sarif
+          checkov -f Dockerfile --output sarif
 
       - name: Upload SARIF artifact
         uses: actions/upload-artifact@v4
