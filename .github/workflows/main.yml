@@ -2,11 +2,8 @@ name: Checkov Docker Scan
 
 on:
   workflow_dispatch:
-  permissions:
-  contents: read
-  checks: write
-  security-events: write
-#push:
+  
+  #push:
  #   branches: [ main ]
   #pull_request:
 
